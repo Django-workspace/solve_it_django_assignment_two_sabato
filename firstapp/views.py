@@ -35,8 +35,6 @@ def delete(request,trainee_id):
         raise Http404("Trainee you are deleting does not exist")
     return render(request,'deleted.html',context)
 
-# def create(context):
-
 # def edit(request,trainee_id):
 
 
