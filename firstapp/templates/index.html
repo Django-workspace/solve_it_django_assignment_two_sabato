@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Trainees list</title>
+</head>
+<body>
+    <center><h1>Trainees Table</h1>
+    <table border="2">
+        <tr>
+            <th>
+                name
+            </th>
+            <th>
+                dob
+            </th>
+            <th>
+                delete
+            </th>
+            <th>
+                edit
+            </th>
+        </tr>
+
+        {% for traine in trainees %}
+
+        <tr>
+            <td>{{traine.full_name}}</td>
+            <td>{{traine.dob}}</td>
+            <td><a href="trainee/delete/{{traine.id}}">delete</a></td>
+            <td><a href="trainee/edit/{{traine.id}}">edit</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    <br>
+    <div id="form">
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</center>
+</body>
+</html>
